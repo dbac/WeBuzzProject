@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_tab_mainlayout">#151515</color>
+    <color name="tab_color_text_select">#FBCD2E</color>
+    <color name="icon_app">#FBCD2E</color>
+    <color name="tab_color_text_default">#8F8F8F</color>
+    <color name="bg_common_first">#8F8F8F</color>
+    <color name="color_circle_default">#555</color>
+    <color name="fragment_bg_common">#212121</color>
+
+
+    <color name="color_primary">@color/fragment_bg_common</color>
+    <color name="color_primary_dark">@color/fragment_bg_common</color>
+    <color name="primary_dark">@color/fragment_bg_common</color>
+    <color name="color_accent">@color/accent</color>
+    <color name="accent">#ffc107</color>
+
+    <color name="primary">@color/fragment_bg_common</color>
+</resources>

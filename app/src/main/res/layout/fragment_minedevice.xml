@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/fragment_bg_common">
+
+    <TextView
+        android:id="@+id/minedevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:text="我的设备"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/textsize_common_16sp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/minedevices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/minedevice"
+        android:layout_marginTop="5dp"
+        android:background="@color/fragment_bg_common"
+        android:dividerHeight="10dp"
+        />
+
+</RelativeLayout>

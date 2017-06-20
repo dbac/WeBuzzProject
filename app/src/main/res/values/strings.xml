@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">WeBuzz</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_device">设备</string>
+    <string name="tab_sport">运动</string>
+    <string name="tab_mine">我</string>
+    <string name="personaltotalscore">个人总成绩</string>
+    <string name="shoot">投篮</string>
+    <string name="dribble">运球</string>
+    <string name="passball">传球</string>
+    <string name="classroom">课堂</string>
+    <string name="mine">我</string>
+</resources>

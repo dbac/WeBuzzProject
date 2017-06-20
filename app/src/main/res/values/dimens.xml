@@ -1,0 +1,34 @@
+<resources>
+    <!--标准1920*1080/5.2   1dp=1ps=2.6px-->
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="textsize_common_18dp">18sp</dimen>
+    <dimen name="textsize_common_18sp">18sp</dimen>
+    <dimen name="textsize_common_16sp">16sp</dimen>
+    <dimen name="textsize_common_14sp">14sp</dimen>
+    <dimen name="textsize_common_12sp">12sp</dimen>
+    <dimen name="textsize_common_20sp">20sp</dimen>
+
+    <dimen name="common_margin_left">15dp</dimen>
+    <dimen name="common_margin_top_first">10dp</dimen>
+    <dimen name="common_margin_bottom_first">10dp</dimen>
+
+
+    <dimen name="common_56dp">56dp</dimen>
+    <dimen name="widget_elevation">10dp</dimen>
+    <dimen name="common_40dp">40dp</dimen>
+    <dimen name="common_30dp">30dp</dimen>
+    <dimen name="cardview_radius">2dp</dimen>
+    <dimen name="cardview_elevation">4dp</dimen>
+    <dimen name="toobar_height">60dp</dimen>
+    <dimen name="common_15dp">15dp</dimen>
+    <dimen name="common_20dp">20dp</dimen>
+    <dimen name="divider_height">1px</dimen>
+    <dimen name="common_50dp">50dp</dimen>
+    <dimen name="common_60dp">60dp</dimen>
+
+
+</resources>

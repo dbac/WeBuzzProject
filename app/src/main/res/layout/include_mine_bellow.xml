@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/include_tag_mine_bellow"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#282828">
+
+
+    <RelativeLayout
+        android:id="@+id/rlminehistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/fragment_bg_common">
+
+        <ImageView
+            android:id="@+id/minehistory"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="@dimen/common_15dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/mine_history_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/common_15dp"
+            android:layout_toRightOf="@+id/minehistory"
+            android:text="历史记录"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textsize_common_16sp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/common_15dp"
+            android:src="@mipmap/app_goahead_icon"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlminehistory"
+        android:layout_marginTop="@dimen/common_15dp"
+        android:background="@color/fragment_bg_common"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rlsetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/minesetting"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="@dimen/common_15dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/mine_setting_icon"/>
+
+            <TextView
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/common_15dp"
+                android:layout_toRightOf="@+id/minesetting"
+                android:text="设置"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textsize_common_16sp"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/common_15dp"
+                android:src="@mipmap/app_goahead_icon"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#282828"/>
+
+        <RelativeLayout
+            android:id="@+id/rlabout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/mineabout"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="@dimen/common_15dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/mine_about_icon"/>
+
+            <TextView
+                android:id="@+id/about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/common_15dp"
+                android:layout_toRightOf="@+id/mineabout"
+                android:text="关于"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textsize_common_16sp"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/common_15dp"
+                android:src="@mipmap/app_goahead_icon"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/divider_height"-->
+    <!--android:layout_marginLeft="10dp"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--android:background="@color/color_divider"/>-->
+
+
+</RelativeLayout>

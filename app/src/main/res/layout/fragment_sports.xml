@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/fragment_bg_common"
+                android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rltop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_60dp"
+        android:layout_gravity="center"
+        android:background="@color/color_tab_mainlayout"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/go_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/common_margin_left"
+                android:src="@mipmap/tab_sport_select_icon"/>
+        </RelativeLayout>
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="4"
+            android:background="@drawable/shape_sport_top_bg"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <RadioButton
+                android:id="@+id/shoot"
+                style="@style/style_RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/radio_group_selector"
+                android:checked="true"
+                android:text="@string/shoot"
+                android:textColor="@drawable/color_radiobutton"/>
+
+            <RadioButton
+                android:id="@+id/dribble"
+                style="@style/style_RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/radio_group_selector"
+                android:text="@string/dribble"
+                android:textColor="@drawable/color_radiobutton"/>
+
+            <RadioButton
+                android:id="@+id/passball"
+                style="@style/style_RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/radio_group_selector"
+                android:text="@string/passball"
+                android:textColor="@drawable/color_radiobutton"/>
+
+
+            <RadioButton
+                android:id="@+id/classroom"
+                style="@style/style_RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/radio_group_selector"
+                android:text="@string/classroom"
+                android:textColor="@drawable/color_radiobutton"/>
+            <!--android:drawableTop="@mipmap/rb_contacts_selector"-->
+        </RadioGroup>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rltop"/>
+
+    <RadioGroup
+        android:id="@+id/rg_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rltop"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_item1"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_sports_item_selector_bg"
+            android:button="@null"/>
+
+        <RadioButton
+            android:id="@+id/rb_item2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_sports_item_selector_bg"
+            android:button="@null"/>
+
+        <RadioButton
+            android:id="@+id/rb_item3"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_sports_item_selector_bg"
+            android:button="@null"/>
+
+        <RadioButton
+            android:id="@+id/rb_item4"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_sports_item_selector_bg"
+            android:button="@null"/>
+    </RadioGroup>
+</RelativeLayout>
