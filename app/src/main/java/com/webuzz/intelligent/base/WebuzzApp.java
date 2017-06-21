@@ -28,7 +28,8 @@ public class WebuzzApp extends CommonApplication {
 		mContext = this;
 		app = this;
 
-		// RxPaparazzo.register(this);
+
+
 
 	}
 

@@ -4,6 +4,10 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
+import com.tencent.bugly.crashreport.CrashReport;
+
 
 /**
  * @name ${WeBuzz}
@@ -23,5 +27,9 @@ public class CommonApplication extends MultiDexApplication {
 	protected void attachBaseContext(Context base) {
 		super.attachBaseContext(base);
 		MultiDex.install(this);
+		Logger.addLogAdapter(new AndroidLogAdapter());
+		CrashReport.initCrashReport(getApplicationContext(), "fe252738ca", true);
+
+
 	}
 }
