@@ -24,7 +24,7 @@
             android:textColor="#FFF"
             android:textSize="20sp"/>
 
-        <com.webuzz.intelligent.view.AllPointProgress
+        <com.webuzz.intelligent.view.ArcProgress
             android:id="@+id/arc_progress"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -64,7 +64,7 @@
                 android:textColor="#FFF"
                 android:textSize="20sp"/>
 
-            <com.webuzz.intelligent.view.FalanProgress
+            <com.webuzz.intelligent.view.ArcProgress
                 android:id="@+id/falan_progress"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -96,7 +96,7 @@
                 android:textColor="#FFF"
                 android:textSize="20sp"/>
 
-            <com.webuzz.intelligent.view.ZhongToProgress
+            <com.webuzz.intelligent.view.ArcProgress
                 android:id="@+id/zhongtou_progress"
                 android:layout_width="100dp"
                 android:layout_height="100dp"

@@ -8,18 +8,10 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 public class PreferencesHelper {
-	/**
-	 * 保存在手机里面的文件名
-	 */
+
 	public static final String FILE_NAME = "configs.txt";
 
-	/**
-	 * 保存数据的方法，我们需要拿到保存数据的具体类型，然后根据类型调用不同的保存方法
-	 *
-	 * @param context
-	 * @param key
-	 * @param object
-	 */
+
 	public static void put(Context context, String key, Object object) {
 
 		SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
@@ -42,14 +34,8 @@ public class PreferencesHelper {
 		SharedPreferencesCompat.apply(editor);
 	}
 
-	/**
-	 * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
-	 *
-	 * @param context
-	 * @param key
-	 * @param defaultObject
-	 * @return
-	 */
+
+
 	public static Object get(Context context, String key, Object defaultObject) {
 		SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
 

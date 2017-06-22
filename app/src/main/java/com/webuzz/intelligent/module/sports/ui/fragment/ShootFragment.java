@@ -6,10 +6,7 @@ import android.util.Log;
 
 import com.webuzz.intelligent.R;
 import com.webuzz.intelligent.base.mvp.BaseFragment;
-import com.webuzz.intelligent.view.AllPointProgress;
 import com.webuzz.intelligent.view.ArcProgress;
-import com.webuzz.intelligent.view.FalanProgress;
-import com.webuzz.intelligent.view.ZhongToProgress;
 
 import java.util.Random;
 
@@ -18,16 +15,13 @@ import butterknife.BindView;
 public class ShootFragment extends BaseFragment {
     private static final String TAG = "ShootFragment";
 
-//    public ShootFragment() {
-//       return ShootFragment.newInstance();
-//     }
 
     @BindView(R.id.arc_progress)
-    AllPointProgress mArcProgress;
+    ArcProgress mArcProgress;
     @BindView(R.id.falan_progress)
-    FalanProgress mFalanProgress;
+    ArcProgress mFalanProgress;
     @BindView(R.id.zhongtou_progress)
-    ZhongToProgress mZhongtouProgress;
+    ArcProgress mZhongtouProgress;
     @BindView(R.id.yuantou_progress)
     ArcProgress mYuantouProgress;
 
@@ -84,8 +78,6 @@ public class ShootFragment extends BaseFragment {
             public void run() {
                 dataChenged();
                 handler.postDelayed(this, 3000);
-                // handler.removeCallbacks(this);
-
             }
         };
         handler.postDelayed(runnable, 1000);
@@ -93,18 +85,9 @@ public class ShootFragment extends BaseFragment {
 
 
     private void dataChenged() {
-        if (minArc >=maxArc)
-            minArc = 0;
-        if (minFalan >=maxFalan)
-            minFalan = 0;
-
-        if (minZhongtou >=maxZhongtou)
-            minZhongtou = 0;
-        if (minYuantou >=maxYuantou)
-            minYuantou = 0;
 
 
-        Log.e(TAG, "dataChenged: ");
+        isSetDefault();
         minArc = minArc + 1;
         minFalan = minFalan + 1;
         minZhongtou = minZhongtou + 1;
@@ -119,6 +102,19 @@ public class ShootFragment extends BaseFragment {
         mFalanProgress.setProgress(minFalan * 100 / maxFalan);
         mZhongtouProgress.setProgress(minZhongtou * 100 / maxZhongtou);
         mYuantouProgress.setProgress(minYuantou * 100 / maxYuantou);
+    }
+
+    private void isSetDefault() {
+        if (minArc >= maxArc)
+            minArc = 0;
+        if (minFalan >= maxFalan)
+            minFalan = 0;
+
+        if (minZhongtou >= maxZhongtou)
+            minZhongtou = 0;
+        if (minYuantou >= maxYuantou)
+            minYuantou = 0;
+
     }
 
     @Override
