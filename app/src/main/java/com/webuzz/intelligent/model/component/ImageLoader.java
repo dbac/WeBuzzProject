@@ -12,35 +12,35 @@ import jp.wasabeef.glide.transformations.GrayscaleTransformation;
 
 public class ImageLoader {
 
-	private ImageLoader() {
-	}
+    private ImageLoader() {
+    }
 
-	public static ImageLoader getInstance() {
-		return Singleton.LOADER;
-	}
+    public static ImageLoader getInstance() {
+        return Singleton.LOADER;
+    }
 
-	public void displayImage(Context context, String url, ImageView view) {
-		Glide.with(context).
-				load(url).
-				crossFade().
-				into(view);
-	}
+    public void displayImage(Context context, String url, ImageView view) {
+        Glide.with(context).
+                load(url).
+                crossFade().
+                into(view);
+    }
 
-	public void displayImage(Context context, int url, ImageView view) {
-		Glide.with(context).
-				load(url).
-				crossFade(1000).
-				into(view);
-	}
+    public void displayImage(Context context, int url, ImageView view) {
+        Glide.with(context).
+                load(url).
+                crossFade(1000).
+                into(view);
+    }
 
-	public void displayImage(Fragment fragment, String url, ImageView view) {
-		if (!fragment.isDetached()) {
-			Glide.with(fragment).
-					load(url).
-					crossFade().
-					into(view);
-		}
-	}
+    public void displayImage(Fragment fragment, String url, ImageView view) {
+        if (!fragment.isDetached()) {
+            Glide.with(fragment).
+                    load(url).
+                    crossFade().
+                    into(view);
+        }
+    }
 
   /*  public void displayImage(Activity activity, String url, ImageView view) {
         if (!activity.isDestroyed()) {
@@ -51,15 +51,15 @@ public class ImageLoader {
         }
     }*/
 
-	public void displayCircleImage(Fragment fragment, String url, ImageView view) {
-		if (!fragment.isDetached()) {
-			Glide.with(fragment).
-					load(url).
-					crossFade().
-					bitmapTransform(new CropCircleTransformation(Glide.get(fragment.getActivity()).getBitmapPool())).
-					into(view);
-		}
-	}
+    public void displayCircleImage(Fragment fragment, String url, ImageView view) {
+        if (!fragment.isDetached()) {
+            Glide.with(fragment).
+                    load(url).
+                    crossFade().
+                    bitmapTransform(new CropCircleTransformation(Glide.get(fragment.getActivity()).getBitmapPool())).
+                    into(view);
+        }
+    }
 
    /* public void displayCircleImage(Activity activity, String url, ImageView view) {
         if (!activity.isDestroyed()) {
@@ -84,16 +84,16 @@ public class ImageLoader {
                 into(view);
     }*/
 
-	public void displayImageGray(Context context, String url, ImageView view) {
-		Glide.with(context).
-				load(url).
-				crossFade().
-				bitmapTransform(new GrayscaleTransformation(context)).
-				into(view);
-	}
+    public void displayImageGray(Context context, String url, ImageView view) {
+        Glide.with(context).
+                load(url).
+                crossFade().
+                bitmapTransform(new GrayscaleTransformation(context)).
+                into(view);
+    }
 
-	private static class Singleton {
-		private static final ImageLoader LOADER = new ImageLoader();
-	}
+    private static class Singleton {
+        private static final ImageLoader LOADER = new ImageLoader();
+    }
 
 }

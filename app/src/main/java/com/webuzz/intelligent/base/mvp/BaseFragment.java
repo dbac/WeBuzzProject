@@ -12,12 +12,6 @@ import me.yokeyword.fragmentation.SupportFragment;
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
-/**
- * @name ${WeBuzz}
- * @anthor ${WFC}  itjavawfc@163.com
- * @time 2017/6/19 00:45
- * @class describe
- */
 public abstract class BaseFragment<T extends BasePresenter> extends SupportFragment implements BaseView {
 	public View mRootView;
 	private T mPresenter;

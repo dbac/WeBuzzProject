@@ -1,15 +1,12 @@
 package com.webuzz.intelligent.base;
 
+import android.app.Service;
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import com.webuzz.intelligent.base.mvp.CommonApplication;
 
-/**
- * @name ${WeBuzz}
- * @anthor ${WFC}  itjavawfc@163.com
- * @time 2017/6/19 00:43
- * @class describe
- */
 public class WebuzzApp extends CommonApplication {
 	private static Context mContext;
 	private static WebuzzApp app;
@@ -27,9 +24,6 @@ public class WebuzzApp extends CommonApplication {
 		super.onCreate();
 		mContext = this;
 		app = this;
-
-
-
 
 	}
 

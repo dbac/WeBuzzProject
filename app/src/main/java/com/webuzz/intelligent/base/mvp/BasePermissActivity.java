@@ -7,12 +7,7 @@ import android.support.v4.app.ActivityCompat;
 import com.webuzz.intelligent.utils.PermissionManager;
 
 
-/**
- * @name ${WeBuzz}
- * @anthor ${WFC}  itjavawfc@163.com
- * @time 2017/6/19 01:39
- * @class describe
- */
+
 public abstract class BasePermissActivity<T extends BasePresenter> extends BaseActivity {
 
 	public void requestPermission(String[] permission, int code) {

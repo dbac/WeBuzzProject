@@ -59,19 +59,6 @@ public class MainActivity extends BaseActivity<MainPresenterImpl> implements Mai
 	}
 
 
-	@Override
-	public String[] needAllowPermission() {
-		return new String[]{
-				android.Manifest.permission.READ_EXTERNAL_STORAGE,
-				android.Manifest.permission.INTERNET,
-				Manifest.permission.WRITE_EXTERNAL_STORAGE,
-		};
-	}
-
-	@Override
-	public void onPermissResult(boolean result) {
-
-	}
 
 	@Override
 	public int getLayoutId() {

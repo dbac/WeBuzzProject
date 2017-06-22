@@ -3,18 +3,10 @@ package com.webuzz.intelligent.base.mvp;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
-
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 import com.tencent.bugly.crashreport.CrashReport;
 
-
-/**
- * @name ${WeBuzz}
- * @anthor ${WFC}  itjavawfc@163.com
- * @time 2017/6/19 01:39
- * @class describe
- */
 public class CommonApplication extends MultiDexApplication {
 
 	@Override
@@ -29,6 +21,7 @@ public class CommonApplication extends MultiDexApplication {
 		MultiDex.install(this);
 		Logger.addLogAdapter(new AndroidLogAdapter());
 		CrashReport.initCrashReport(getApplicationContext(), "fe252738ca", true);
+		FlowManager.init(this);
 
 
 	}

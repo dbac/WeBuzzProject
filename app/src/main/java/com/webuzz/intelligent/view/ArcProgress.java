@@ -287,16 +287,9 @@ public class ArcProgress extends View {
 		//canvas.drawCircle(cx, cy, innerRadius, innerPaint);
 
 		String text = String.valueOf(getProgress());
-		Log.e("wfc", "onDraw: -->"+text);
 		if (!TextUtils.isEmpty(text)) {
 			textPaint.setColor(textColor);
 			textPaint.setTextSize(textSize);
-
-//			if (isStopStep) {
-//				text = "暂停";
-//				textPaint.setTextSize(textSize / 2);
-//			}
-
 			float textHeight = textPaint.descent() + textPaint.ascent();
 			float textBaseline = (getHeight() - textHeight) / 2.0f;
 			canvas.drawText(text+"%", (getWidth() - textPaint.measureText(text)) / 2.0f, textBaseline, textPaint);
