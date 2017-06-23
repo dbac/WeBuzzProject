@@ -3,7 +3,7 @@ package com.webuzz.intelligent.module.mine.mvp.model;
 
 import com.webuzz.intelligent.module.mine.mvp.contract.MineFragmentContract;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 
 public class MineFragmentModelImpl implements MineFragmentContract.Model {

@@ -10,7 +10,8 @@ import com.webuzz.intelligent.module.main.mvp.model.Recommend;
 
 import java.util.List;
 
-import rx.Observable;
+import io.reactivex.Observable;
+
 
 /**
  * @name ${WeBuzz}

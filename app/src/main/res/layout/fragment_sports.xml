@@ -1,8 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/fragment_bg_common"
-                android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragment_bg_common"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/rltop"
@@ -24,78 +25,44 @@
                 android:layout_centerInParent="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/common_margin_left"
-                android:src="@mipmap/tab_sport_select_icon"/>
+                android:src="@mipmap/tab_sport_select_icon" />
         </RelativeLayout>
 
-        <RadioGroup
-            android:id="@+id/radiogroup"
+        <com.sevenheaven.segmentcontrol.SegmentControl xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/segment_control"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:layout_gravity="center_vertical"
             android:layout_weight="4"
-            android:background="@drawable/shape_sport_top_bg"
-            android:orientation="horizontal"
-            android:visibility="visible">
+            android:textSize="18sp"
+            android:padding="8dp"
+            app:backgroundColors="@color/background_color"
+            app:boundWidth="1dp"
+            app:cornerRadius="2dp"
+            app:normalColor="#FFFFFF"
+            app:selectedColor="@android:color/black"
+            app:separatorWidth="1dp"
+            app:textColors="@color/text_color"
+            app:texts="投篮|运球|传球|课堂"
+            app:verticalGap="10dp"
+            app:horizonGap="10dp" />
 
-            <RadioButton
-                android:id="@+id/shoot"
-                style="@style/style_RadioButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/radio_group_selector"
-                android:checked="true"
-                android:text="@string/shoot"
-                android:textColor="@drawable/color_radiobutton"/>
-
-            <RadioButton
-                android:id="@+id/dribble"
-                style="@style/style_RadioButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/radio_group_selector"
-                android:text="@string/dribble"
-                android:textColor="@drawable/color_radiobutton"/>
-
-            <RadioButton
-                android:id="@+id/passball"
-                style="@style/style_RadioButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/radio_group_selector"
-                android:text="@string/passball"
-                android:textColor="@drawable/color_radiobutton"/>
-
-
-            <RadioButton
-                android:id="@+id/classroom"
-                style="@style/style_RadioButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/radio_group_selector"
-                android:text="@string/classroom"
-                android:textColor="@drawable/color_radiobutton"/>
-            <!--android:drawableTop="@mipmap/rb_contacts_selector"-->
-        </RadioGroup>
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
 
     </LinearLayout>
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/rltop"/>
+        android:layout_below="@id/rltop" />
 
     <RadioGroup
         android:id="@+id/rg_item"
@@ -115,7 +82,7 @@
             android:layout_marginRight="25dp"
             android:layout_weight="1"
             android:background="@drawable/tab_sports_item_selector_bg"
-            android:button="@null"/>
+            android:button="@null" />
 
         <RadioButton
             android:id="@+id/rb_item2"
@@ -125,7 +92,7 @@
             android:layout_marginRight="25dp"
             android:layout_weight="1"
             android:background="@drawable/tab_sports_item_selector_bg"
-            android:button="@null"/>
+            android:button="@null" />
 
         <RadioButton
             android:id="@+id/rb_item3"
@@ -135,7 +102,7 @@
             android:layout_marginRight="25dp"
             android:layout_weight="1"
             android:background="@drawable/tab_sports_item_selector_bg"
-            android:button="@null"/>
+            android:button="@null" />
 
         <RadioButton
             android:id="@+id/rb_item4"
@@ -145,6 +112,6 @@
             android:layout_marginRight="25dp"
             android:layout_weight="1"
             android:background="@drawable/tab_sports_item_selector_bg"
-            android:button="@null"/>
+            android:button="@null" />
     </RadioGroup>
 </RelativeLayout>

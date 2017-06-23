@@ -3,7 +3,7 @@ package com.webuzz.intelligent.module.device.mvp.model;
 
 import com.webuzz.intelligent.module.device.mvp.contract.MineDeviceContract;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 
 public class MineDeviceModelImpl implements MineDeviceContract.Model {

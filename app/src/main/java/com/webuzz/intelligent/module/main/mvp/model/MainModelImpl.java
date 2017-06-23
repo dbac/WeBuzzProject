@@ -4,7 +4,8 @@ import com.webuzz.intelligent.module.main.mvp.contract.MainContract;
 
 import java.util.List;
 
-import rx.Observable;
+import io.reactivex.Observable;
+
 
 /**
  * @name ${WeBuzz}

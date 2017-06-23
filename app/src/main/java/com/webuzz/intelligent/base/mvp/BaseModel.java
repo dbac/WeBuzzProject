@@ -1,8 +1,7 @@
 package com.webuzz.intelligent.base.mvp;
 
 
-import rx.Observable;
-
+import io.reactivex.Observable;
 
 public interface BaseModel {
 	<T> Observable<T> getData();

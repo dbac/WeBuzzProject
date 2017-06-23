@@ -3,14 +3,19 @@ package com.webuzz.intelligent.module.sports.ui.fragment;
 
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 
 import com.webuzz.intelligent.R;
+import com.webuzz.intelligent.base.WebuzzApp;
 import com.webuzz.intelligent.base.mvp.BaseFragment;
+import com.webuzz.intelligent.utils.IntentUtils;
 import com.webuzz.intelligent.view.ArcProgress;
+import com.webuzz.intelligent.view.TextCircleView;
 
 import java.util.Random;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class ShootFragment extends BaseFragment {
     private static final String TAG = "ShootFragment";
@@ -24,10 +29,13 @@ public class ShootFragment extends BaseFragment {
     ArcProgress mZhongtouProgress;
     @BindView(R.id.yuantou_progress)
     ArcProgress mYuantouProgress;
+//    @BindView(R.id.start)
+//    TextCircleView start;
 
 
     int minArc, minFalan, minZhongtou, minYuantou;
     int maxArc, maxFalan, maxZhongtou, maxYuantou;
+
 
 
     private Handler handler = new Handler();
@@ -85,8 +93,6 @@ public class ShootFragment extends BaseFragment {
 
 
     private void dataChenged() {
-
-
         isSetDefault();
         minArc = minArc + 1;
         minFalan = minFalan + 1;
@@ -122,4 +128,19 @@ public class ShootFragment extends BaseFragment {
         super.onDestroyView();
         handler.removeCallbacks(runnable);
     }
+
+    @OnClick({R.id.start})
+    void butterknifeOnClick(View view) {
+        switch (view.getId()) {
+            case R.id.start:
+                //IntentUtils.startActivity(WebuzzApp.getContext(),);
+                break;
+
+            default:
+                break;
+        }
+    }
+
+
+
 }

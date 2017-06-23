@@ -1,7 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'dexknifePlus'
 def dbflow_version = "4.0.4"
+apply plugin: 'me.tatarka.retrolambda'
+//versionName = "1.0_" + buildTime()
 
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd')
+    return formattedDate
+}
 
 android {
     compileSdkVersion 25
@@ -11,10 +18,9 @@ android {
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
-
         ndk {
             // 设置支持的SO库架构
             abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
@@ -23,12 +29,45 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            zipAlignEnabled true
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+           /* applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = "webuzz_v${defaultConfig.versionName}_${buildTime()}_${variant.productFlavors[0].name}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }*/
+
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+
+                    // 获取渠道
+                    def flavor = variant.productFlavors[0]
+                    def flavorName
+                    if (flavor == null) {
+                        flavorName = "webuzz"
+                    } else {
+                        flavorName = flavor.name
+                    }
+
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = "webuzz_v${defaultConfig.versionName}_${buildTime()}_${flavorName}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
         }
     }
 
-    afterEvaluate {
+   /* afterEvaluate {
         tasks.matching {
             it.name.startsWith('dex')
         }.each { dx ->
@@ -37,12 +76,17 @@ android {
             }
             dx.additionalParameters += '--set-max-idx-number=48000'
         }
-    }
+    }*/
 
     dexKnife {
         enabled true //if false,禁用分包插件
         productFlavor 'mock'
         buildType 'debug'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
 }
@@ -62,11 +106,14 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+
+
+    compile ('com.squareup.retrofit2:adapter-rxjava:2.1.0'){
+        exclude module: 'rxjava'
+    }
+
     compile 'com.squareup.okhttp3:logging-interceptor:3.7.0'
     compile 'com.google.code.gson:gson:2.8.0'
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.1.6'
     compile 'me.yokeyword:fragmentation:0.10.7'
     compile 'com.github.GrenderG:Toasty:1.2.5'
     compile 'jp.wasabeef:glide-transformations:2.0.2'
@@ -79,12 +126,19 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.mikepenz:itemanimators:0.2.4@aar'
     compile 'jp.wasabeef:glide-transformations:2.0.2'
+
     annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
+
     compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow-rx2:${dbflow_version}"
+
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
     compile 'com.github.a-voyager:BluetoothHelper:f71d40a98b'
+    compile 'com.7heaven.widgets:segmentcontrol:1.16'
+    compile "com.github.miguelbcr:RxPaparazzo:0.5.3-2.x"
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.blankj:utilcode:1.3.6'
 
 
 }

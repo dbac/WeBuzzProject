@@ -8,6 +8,7 @@ import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.sevenheaven.segmentcontrol.SegmentControl;
 import com.webuzz.intelligent.R;
 import com.webuzz.intelligent.base.mvp.BaseFragment;
 import com.webuzz.intelligent.module.mine.adapter.MediaFragmentPagerAdapter;
@@ -18,26 +19,29 @@ import java.util.List;
 import butterknife.BindView;
 
 
-public class SportsFragment extends BaseFragment implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener {
+public class SportsFragment extends BaseFragment implements ViewPager.OnPageChangeListener,SegmentControl.OnSegmentControlClickListener{  //, RadioGroup.OnCheckedChangeListener
 	private static final String TAG = "SportsFragment";
 
 	@BindView(R.id.viewPager)
 	ViewPager mPager;
 
-	@BindView(R.id.radiogroup)
-	RadioGroup mGroup;
+//	@BindView(R.id.radiogroup)
+//	RadioGroup mGroup;
 
 	@BindView(R.id.rg_item)
 	RadioGroup mItemGroup;
 
-	@BindView(R.id.shoot)
-	RadioButton shoot;
-	@BindView(R.id.dribble)
-	RadioButton dribble;
-	@BindView(R.id.passball)
-	RadioButton passball;
-	@BindView(R.id.classroom)
-	RadioButton classroom;
+//	@BindView(R.id.shoot)
+//	RadioButton shoot;
+//	@BindView(R.id.dribble)
+//	RadioButton dribble;
+//	@BindView(R.id.passball)
+//	RadioButton passball;
+//	@BindView(R.id.classroom)
+//	RadioButton classroom;
+
+	@BindView(R.id.segment_control)
+	SegmentControl segmentControl;
 
 	List<Fragment> fragmentList = new ArrayList<>();
 
@@ -55,15 +59,15 @@ public class SportsFragment extends BaseFragment implements ViewPager.OnPageChan
 
 
 	public static SportsFragment newInstance() {
-		Log.d(TAG, "newInstance() called");
 		SportsFragment fragment = new SportsFragment();
 		return fragment;
 	}
 
 	@Override
 	protected void initEvent() {
-		mGroup.setOnCheckedChangeListener(this);
+		//mGroup.setOnCheckedChangeListener(this);
 		mPager.addOnPageChangeListener(this);
+		segmentControl.setOnSegmentControlClickListener(this);
 	}
 
 
@@ -77,10 +81,15 @@ public class SportsFragment extends BaseFragment implements ViewPager.OnPageChan
 
 	@Override
 	protected int getLayoutId() {
-		Log.d(TAG, "getLayoutId() called");
 		return R.layout.fragment_sports;
 	}
 
+
+
+	@Override
+	public void onSegmentControlClick(int index) {
+		mPager.setCurrentItem(index);
+	}
 
 	@Override
 	public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -89,22 +98,23 @@ public class SportsFragment extends BaseFragment implements ViewPager.OnPageChan
 
 	@Override
 	public void onPageSelected(int position) {
+		segmentControl.setSelectedIndex(position);
 		switch (position) {
 			case 0:
-				mGroup.check(R.id.shoot);
-				mItemGroup.check(R.id.rb_item1);
+			//	mGroup.check(R.id.shoot);
+			 	mItemGroup.check(R.id.rb_item1);
 				break;
 			case 1:
-				mGroup.check(R.id.dribble);
-				mItemGroup.check(R.id.rb_item2);
+			//	mGroup.check(R.id.dribble);
+			 	mItemGroup.check(R.id.rb_item2);
 				break;
 			case 2:
-				mGroup.check(R.id.passball);
-				mItemGroup.check(R.id.rb_item3);
+			//	mGroup.check(R.id.passball);
+			 	mItemGroup.check(R.id.rb_item3);
 				break;
 			case 3:
-				mGroup.check(R.id.classroom);
-				mItemGroup.check(R.id.rb_item4);
+			//	mGroup.check(R.id.classroom);
+			 	mItemGroup.check(R.id.rb_item4);
 				break;
 		}
 	}
@@ -114,7 +124,7 @@ public class SportsFragment extends BaseFragment implements ViewPager.OnPageChan
 
 	}
 
-	@Override
+	/*@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		switch (checkedId) {
 			case R.id.shoot:
@@ -136,5 +146,7 @@ public class SportsFragment extends BaseFragment implements ViewPager.OnPageChan
 			default:
 				break;
 		}
-	}
+	}*/
+
+
 }

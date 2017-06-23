@@ -25,3 +25,19 @@
 #-renamesourcefileattribute SourceFile
 -dontwarn com.tencent.bugly.**
 -keep public class com.tencent.bugly.**{*;}
+# Rxjava rules
+-dontwarn rx.internal.util.**
+
+-keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
+    long producerIndex;
+    long consumerIndex;
+}
+-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
+    long producerNode;
+    long consumerNode;
+}
+
+
+-keep class com.blankj.utilcode.** { *; }
+-keep classmembers class com.blankj.utilcode.** { *; }
+-dontwarn com.blankj.utilcode.**
