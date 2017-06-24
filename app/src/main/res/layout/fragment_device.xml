@@ -31,39 +31,65 @@
 
         </RelativeLayout>
 
-        <RadioGroup
-            android:id="@+id/radiogroup"
+
+
+
+        <!--<RadioGroup-->
+            <!--android:id="@+id/radiogroup"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_weight="4"-->
+            <!--android:background="@drawable/shape_sport_top_bg"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:visibility="visible">-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/minedevice"-->
+                <!--style="@style/style_RadioButton"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@drawable/radio_group_selector"-->
+                <!--android:checked="true"-->
+                <!--android:text="我的"-->
+                <!--android:textColor="@drawable/color_radiobutton"/>-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/arounddevice"-->
+                <!--style="@style/style_RadioButton"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@drawable/radio_group_selector"-->
+                <!--android:text="附近"-->
+                <!--android:textColor="@drawable/color_radiobutton"/>-->
+
+        <!--</RadioGroup>-->
+
+
+
+        <com.sevenheaven.segmentcontrol.SegmentControl xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/segment_control"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:layout_gravity="center_vertical"
-            android:layout_weight="4"
-            android:background="@drawable/shape_sport_top_bg"
-            android:orientation="horizontal"
-            android:visibility="visible">
+             android:layout_weight="4"
+            android:textSize="16sp"
+            android:padding="8dp"
+            app:backgroundColors="@color/background_color"
+            app:boundWidth="1dp"
+            app:cornerRadius="2dp"
+            app:normalColor="#FFFFFF"
+            app:selectedColor="@android:color/black"
+            app:separatorWidth="1dp"
+            app:textColors="@color/text_color"
+            app:texts="我的|附件"
+            app:verticalGap="10dp"
+            app:horizonGap="10dp" />
 
-            <RadioButton
-                android:id="@+id/minedevice"
-                style="@style/style_RadioButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/radio_group_selector"
-                android:checked="true"
-                android:text="我的"
-                android:textColor="@drawable/color_radiobutton"/>
 
-            <RadioButton
-                android:id="@+id/arounddevice"
-                style="@style/style_RadioButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/radio_group_selector"
-                android:text="附近"
-                android:textColor="@drawable/color_radiobutton"/>
-
-        </RadioGroup>
 
         <RelativeLayout
             android:layout_width="0dp"

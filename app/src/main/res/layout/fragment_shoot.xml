@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:gyw="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin">
+    xmlns:gyw="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/fragment_bg_common"
+
+    >
 
     <RelativeLayout
         android:id="@+id/rl_allshort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/shootball"
@@ -22,7 +25,7 @@
             android:layout_centerHorizontal="true"
             android:text="总投篮"
             android:textColor="#FFF"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <com.webuzz.intelligent.view.ArcProgress
             android:id="@+id/arc_progress"
@@ -34,11 +37,11 @@
             gyw:arc_bottom_text="0/0"
             gyw:arc_bottom_text_size="16dip"
             gyw:arc_finished_color="#FBCD2E"
-            gyw:arc_stroke_width="12dip"
+            gyw:arc_stroke_width="8dip"
             gyw:arc_suffix_text_size="18dip"
             gyw:arc_text_color="#ffffff"
             gyw:arc_text_size="46dip"
-            gyw:arc_unfinished_color="#555"/>
+            gyw:arc_unfinished_color="#555" />
         <!--gyw:arc_suffix_text="步数"    gyw:arc_max="1000"-->
     </RelativeLayout>
 
@@ -47,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl_allshort"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <RelativeLayout
@@ -62,7 +65,7 @@
                 android:layout_centerHorizontal="true"
                 android:text="罚球"
                 android:textColor="#FFF"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <com.webuzz.intelligent.view.ArcProgress
                 android:id="@+id/falan_progress"
@@ -74,11 +77,11 @@
                 gyw:arc_bottom_text="0/0"
                 gyw:arc_bottom_text_size="12dip"
                 gyw:arc_finished_color="#FBCD2E"
-                gyw:arc_stroke_width="8dp"
+                gyw:arc_stroke_width="6dp"
                 gyw:arc_suffix_text_size="12dip"
                 gyw:arc_text_color="#ffffff"
                 gyw:arc_text_size="32dip"
-                gyw:arc_unfinished_color="#555"/>
+                gyw:arc_unfinished_color="#555" />
             <!--gyw:arc_suffix_text="步数"-->
         </RelativeLayout>
 
@@ -94,7 +97,7 @@
                 android:layout_centerHorizontal="true"
                 android:text="中投"
                 android:textColor="#FFF"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <com.webuzz.intelligent.view.ArcProgress
                 android:id="@+id/zhongtou_progress"
@@ -106,11 +109,11 @@
                 gyw:arc_bottom_text="0/0"
                 gyw:arc_bottom_text_size="12dip"
                 gyw:arc_finished_color="#FBCD2E"
-                gyw:arc_stroke_width="8dp"
+                gyw:arc_stroke_width="6dp"
                 gyw:arc_suffix_text_size="12dip"
                 gyw:arc_text_color="#ffffff"
                 gyw:arc_text_size="32dip"
-                gyw:arc_unfinished_color="#555"/>
+                gyw:arc_unfinished_color="#555" />
             <!--gyw:arc_suffix_text="步数"    gyw:arc_max="1000"-->
         </RelativeLayout>
 
@@ -126,7 +129,7 @@
                 android:layout_centerHorizontal="true"
                 android:text="远投"
                 android:textColor="#FFF"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <com.webuzz.intelligent.view.ArcProgress
                 android:id="@+id/yuantou_progress"
@@ -138,30 +141,25 @@
                 gyw:arc_bottom_text="0/0"
                 gyw:arc_bottom_text_size="12dip"
                 gyw:arc_finished_color="#FBCD2E"
-                gyw:arc_stroke_width="8dp"
+                gyw:arc_stroke_width="6dp"
                 gyw:arc_suffix_text_size="12dip"
                 gyw:arc_text_color="#ffffff"
                 gyw:arc_text_size="32dip"
-                gyw:arc_unfinished_color="#555"/>
-            <!--gyw:arc_suffix_text="步数"  gyw:arc_max="1000"-->
+                gyw:arc_unfinished_color="#555" />
         </RelativeLayout>
 
     </LinearLayout>
 
     <com.webuzz.intelligent.view.TextCircleView
         android:id="@+id/start"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:paddingLeft="30dp"
-        android:paddingBottom="50dp"
         android:text="开始"
         android:textColor="@color/color_accent"
-        android:textSize="20sp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/common_20dp"
-        android:layout_centerHorizontal="true"
-        />
-
+        android:textSize="20sp" />
 
 </RelativeLayout>

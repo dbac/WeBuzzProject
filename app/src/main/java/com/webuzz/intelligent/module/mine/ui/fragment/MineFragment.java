@@ -26,6 +26,7 @@ import com.webuzz.intelligent.module.mine.adapter.MineFragmentAdapter;
 import com.webuzz.intelligent.module.mine.bean.ScoreCategory;
 import com.webuzz.intelligent.module.mine.mvp.contract.MineFragmentContract;
 import com.webuzz.intelligent.module.mine.mvp.presenter.MineFragmentPresenterImpl;
+import com.webuzz.intelligent.view.CircleImageView;
 import com.yalantis.ucrop.UCrop;
 
 import java.util.List;
@@ -48,6 +49,13 @@ public class MineFragment extends BaseItemFragment<MineFragmentPresenterImpl> im
 	RelativeLayout rlminehistory;
 	@BindView(R.id.rlsetting)
 	RelativeLayout rlsetting;
+
+	@BindView(R.id.userlogo)
+	CircleImageView userlogo;
+
+
+
+
 	@BindView(R.id.rlabout)
 	RelativeLayout rlabout;
 
@@ -139,7 +147,7 @@ public class MineFragment extends BaseItemFragment<MineFragmentPresenterImpl> im
 
 	}
 
-	@OnClick({R.id.rlminehistory, R.id.rlsetting, R.id.rlabout})
+	@OnClick({R.id.rlminehistory, R.id.rlsetting, R.id.rlabout,R.id.userlogo})
 	void butterknifeOnClick(View view) {
 		switch (view.getId()) {
 			case R.id.rlminehistory:
@@ -152,7 +160,7 @@ public class MineFragment extends BaseItemFragment<MineFragmentPresenterImpl> im
 				Toasty.normal(WebuzzApp.getContext(), "关于！", 0).show();
 				break;
 				case R.id.userlogo:
-					changeUserPic();
+					//changeUserPic();
 				break;
 		}
 	}
@@ -165,7 +173,7 @@ public class MineFragment extends BaseItemFragment<MineFragmentPresenterImpl> im
 		options.setStatusBarColor(ContextCompat.getColor(WebuzzApp.getContext(), R.color.color_primary_dark));
 		options.setActiveWidgetColor(color);
 
-		final Context context =WebuzzApp.getContext();
+		final Context context =getActivity();
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		builder.setTitle("Tips:")
 				.setMessage("如何获取图片？")
@@ -181,6 +189,13 @@ public class MineFragment extends BaseItemFragment<MineFragmentPresenterImpl> im
 								if (response.resultCode() != RESULT_OK) {
 									//response.targetUI().showUserCanceled();
 									//response.targetUI().showProgressView();
+
+									//String filePath = response.data();
+									//response.data().getFile();
+
+									Glide.with(WebuzzApp.getContext()).load(response.data().getFile()).into(userlogo);
+									//TApplication.getSpUtils().putString(Constant.STRING_USER, filePath);//保存图片路径
+
 									return;
 								}
 

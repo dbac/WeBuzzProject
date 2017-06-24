@@ -20,12 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/WebuzzZppTheme"
         >
-
-
-
-
         <activity android:name=".module.main.ui.MainActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/WebuzzZppTheme"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

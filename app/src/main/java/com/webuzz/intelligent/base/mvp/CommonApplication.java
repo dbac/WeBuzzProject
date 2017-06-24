@@ -23,7 +23,7 @@ public class CommonApplication extends MultiDexApplication {
 		super.attachBaseContext(base);
 		MultiDex.install(this);
 		Logger.addLogAdapter(new AndroidLogAdapter());
-		CrashReport.initCrashReport(getApplicationContext(), "fe252738ca", true);
+		CrashReport.initCrashReport(this, "fe252738ca", true);
 		FlowManager.init(this);
  		RxPaparazzo.register(this);
 

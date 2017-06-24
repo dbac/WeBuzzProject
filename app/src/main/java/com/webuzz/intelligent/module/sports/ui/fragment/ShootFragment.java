@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 
+import com.tencent.bugly.crashreport.CrashReport;
 import com.webuzz.intelligent.R;
 import com.webuzz.intelligent.base.WebuzzApp;
 import com.webuzz.intelligent.base.mvp.BaseFragment;
@@ -29,9 +30,6 @@ public class ShootFragment extends BaseFragment {
     ArcProgress mZhongtouProgress;
     @BindView(R.id.yuantou_progress)
     ArcProgress mYuantouProgress;
-//    @BindView(R.id.start)
-//    TextCircleView start;
-
 
     int minArc, minFalan, minZhongtou, minYuantou;
     int maxArc, maxFalan, maxZhongtou, maxYuantou;
@@ -135,7 +133,6 @@ public class ShootFragment extends BaseFragment {
             case R.id.start:
                 //IntentUtils.startActivity(WebuzzApp.getContext(),);
                 break;
-
             default:
                 break;
         }

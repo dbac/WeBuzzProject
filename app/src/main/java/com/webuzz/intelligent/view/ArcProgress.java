@@ -63,13 +63,13 @@ public class ArcProgress extends View {
 		super(context, attrs, defStyleAttr);
 
 		default_text_size = DisplayUtil.sp2px(context, 18);
-		min_size = (int) DisplayUtil.dip2px(context, 100);
-		default_text_size = DisplayUtil.sp2px(context, 40);
+		min_size = DisplayUtil.dip2px(context, 100);
+		default_text_size = DisplayUtil.sp2px(context, 30);
 		default_suffix_text_size = DisplayUtil.sp2px(context, 15);
-		default_suffix_padding = DisplayUtil.dip2px(context, 4);
+		default_suffix_padding = DisplayUtil.dip2px(context, 2);
 		default_suffix_text = "步";
-		default_bottom_text_size = DisplayUtil.sp2px(context, 10);
-		default_stroke_width = DisplayUtil.dip2px(context, 4);
+		default_bottom_text_size = DisplayUtil.sp2px(context, 5);
+		default_stroke_width = DisplayUtil.dip2px(context, 2);
 
 		TypedArray attributes = context.getTheme().obtainStyledAttributes(attrs, R.styleable.ArcProgress, defStyleAttr, 0);
 		initByAttributes(attributes);

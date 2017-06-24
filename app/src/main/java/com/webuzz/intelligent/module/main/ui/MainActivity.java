@@ -59,7 +59,6 @@ public class MainActivity extends BaseActivity<MainPresenterImpl> implements Mai
 	}
 
 
-
 	@Override
 	public int getLayoutId() {
 		return R.layout.activity_main;
